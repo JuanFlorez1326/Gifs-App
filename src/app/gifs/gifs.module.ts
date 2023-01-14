@@ -4,8 +4,6 @@ import { GifsPageComponent } from './gifs-page/gifs-page.component';
 import { SearchComponent } from './search/search.component';
 import { CardsComponent } from './cards/cards.component';
 
-
-
 @NgModule({
   declarations: [
     GifsPageComponent,
@@ -19,4 +17,4 @@ import { CardsComponent } from './cards/cards.component';
     GifsPageComponent
   ]
 })
-export class GifsModule { }
+export class GifsModule {}

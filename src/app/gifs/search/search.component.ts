@@ -7,7 +7,9 @@ import { GifsService } from '../services/gifs.service';
 })
 export class SearchComponent {
 
-  constructor( private readonly gifsService: GifsService ) { }
+  constructor( 
+    private readonly gifsService: GifsService 
+  ) { }
 
   @ViewChild('txtSearch') txtSearch!: ElementRef<HTMLInputElement>;
 

@@ -1,1 +1,16 @@
-<p>cards works!</p>
+<div class="row">
+    <div *ngFor="let gif of results" class="col-md-4 col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <img 
+                    class="card-img-top" 
+                    [src]="gif.images.fixed_height.url" 
+                    [alt]="gif.title"
+                >
+                <p class="card-text">
+                    {{ gif.title }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
