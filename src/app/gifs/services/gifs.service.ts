@@ -9,7 +9,11 @@ export class GifsService {
 
   constructor( 
     private readonly http: HttpClient 
-  ) { }
+  ) { 
+    if ( localStorage.getItem('history') ) {
+      this._history = JSON.parse( localStorage.getItem('history')! );
+    }
+  }
 
   private apiKey: string = 'fxFFfmGrMf1nffARUk46my9E4vCHDemv';
   private _history: string[] = [];
@@ -23,8 +27,10 @@ export class GifsService {
     query = query.trim().toLowerCase();
 
     if ( !this._history.includes( query)) {
+
       this._history.unshift( query );
       this._history = this._history.splice(0, 12);
+      localStorage.setItem('history', JSON.stringify(this._history));
     }
 
     this.http.get<SearchGifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=${ this.apiKey }&q=${ query }&limit=12`)
