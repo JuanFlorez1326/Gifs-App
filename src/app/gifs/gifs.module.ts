@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GifsPageComponent } from './gifs-page/gifs-page.component';
-import { SearchComponent } from './search/search.component';
-import { CardsComponent } from './cards/cards.component';
+import { GifsPageComponent } from './components/gifs-page/gifs-page.component';
+import { SearchComponent } from './components/search/search.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
