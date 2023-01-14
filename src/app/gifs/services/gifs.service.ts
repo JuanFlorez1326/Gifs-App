@@ -13,6 +13,10 @@ export class GifsService {
     if ( localStorage.getItem('history') ) {
       this._history = JSON.parse( localStorage.getItem('history')! );
     }
+
+    if( localStorage.getItem('results') ) {
+      this.results = JSON.parse( localStorage.getItem('results')! );
+    }
   }
 
   private apiKey: string = 'fxFFfmGrMf1nffARUk46my9E4vCHDemv';
@@ -38,6 +42,7 @@ export class GifsService {
         (res) => {
           this.results = res.data;
           console.log(res.data);
+          localStorage.setItem('results', JSON.stringify(this.results));
         }
       )
   }
